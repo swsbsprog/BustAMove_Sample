@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Collider2D col;
+    public void Awake() => col = GetComponent<Collider2D>();
 }

@@ -20,7 +20,8 @@ public class MovingBubble : MonoBehaviour
         Bubble bubble = GetComponentInChildren<Bubble>(true);
         if (bubble == null)
             return;
-        bubble.transform.parent = TilemapManager.instance.transform;
+        bubble.col.enabled = true;
+        TilemapManager.instance.AddBubble(bubble);
 
         //움직이는버블 부스고,
         Destroy(gameObject);
