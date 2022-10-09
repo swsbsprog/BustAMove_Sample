@@ -392,7 +392,7 @@ TextureImporter:
       Yellow_2: -276098942
       Yellow_8: -1800126708
   spritePackingTag: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 

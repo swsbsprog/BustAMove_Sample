@@ -392,7 +392,7 @@ TextureImporter:
       Blue_4: 2145462279
       Blue_9: -459572593
   spritePackingTag: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 

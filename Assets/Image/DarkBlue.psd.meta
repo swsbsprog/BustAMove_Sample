@@ -392,7 +392,7 @@ TextureImporter:
       DarkBlue_9: 67424836
       DarkBlue_5: 560775539
   spritePackingTag: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
