@@ -85,7 +85,7 @@ public class TilemapManager : MonoBehaviour
                 var coordTop = new Vector2Int(x, upY);
                 if (aliveBubble.Contains(coordTop))
                 {
-                    aliveBubble.Add(coordTop);
+                    aliveBubble.Add(coord);
                     continue;
                 }
                 if (y % 2 == 0)  // Y가 짝수 일때는 위, 위왼쪽 체크
@@ -93,7 +93,7 @@ public class TilemapManager : MonoBehaviour
                     var coordTopLeft = new Vector2Int(x - 1, upY);
                     if (aliveBubble.Contains(coordTopLeft))
                     {
-                        aliveBubble.Add(coordTopLeft);
+                        aliveBubble.Add(coord);
                         continue;
                     }
                 }
@@ -102,7 +102,7 @@ public class TilemapManager : MonoBehaviour
                     var coordTopRight = new Vector2Int(x + 1, upY);
                     if (aliveBubble.Contains(coordTopRight))
                     {
-                        aliveBubble.Add(coordTopRight);
+                        aliveBubble.Add(coord);
                         continue;
                     }
                 }
@@ -116,11 +116,11 @@ public class TilemapManager : MonoBehaviour
         //    coordMap[coord].GetComponent<SpriteRenderer>().color = Color.green;
         //}
 
-        //foreach(var coord in isolateBubble)
-        //{
-        //    Destroy(coordMap[coord].gameObject);
-        //    coordMap.Remove(coord);
-        //}
+        foreach (var coord in isolateBubble)
+        {
+            Destroy(coordMap[coord].gameObject);
+            coordMap.Remove(coord);
+        }
     }
 
     private void CheckNearSameBubble(Bubble.Type type, Vector2Int coord2D)
