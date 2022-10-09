@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2989422038425440763}
   - component: {fileID: 3177580014840127895}
   - component: {fileID: -1014085463395954105}
+  - component: {fileID: 6619602794465868119}
   m_Layer: 0
   m_Name: Green
   m_TagString: Untagged
@@ -118,3 +119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134da2c480e98b346a9ae8e74c852897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &6619602794465868119
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2989422038425440762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.44444445
