@@ -10,4 +10,19 @@ public class MovingBubble : MonoBehaviour
     {
         rb.AddForce(direction * force, ForceMode2D.Impulse);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Bubble") == false)
+            return;
+
+        //멈춰진 버블 생성하자.
+        Bubble bubble = GetComponentInChildren<Bubble>(true);
+        if (bubble == null)
+            return;
+        bubble.transform.parent = TilemapManager.instance.transform;
+
+        //움직이는버블 부스고,
+        Destroy(gameObject);
+    }
 }
