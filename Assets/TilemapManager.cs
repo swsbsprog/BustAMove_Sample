@@ -53,20 +53,21 @@ public class TilemapManager : MonoBehaviour
         //y가 짝수 일때 (-1,1)/(-1, -1)
         if ( coord2D.y %2 == 0)
         { 
-            AddSameBubble(type, coord2D,-1, 1);// 위쪽
-            AddSameBubble(type, coord2D, 0, 1);// 위쪽
+            AddSameBubble(type, coord2D,-1, 1);// 위쪽위
+            AddSameBubble(type, coord2D,-1,-1);// 왼쪽아래
         }
         else //y가 홀수 일때 (1,1)/(1, -1)
         {
-            AddSameBubble(type, coord2D, 1, 1);// 위쪽
-            AddSameBubble(type, coord2D, 1,-1);// 위쪽
+            AddSameBubble(type, coord2D, 1, 1);// 오른쪽위
+            AddSameBubble(type, coord2D, 1,-1);// 오른쪽아래
         }
     }
 
     HashSet<Vector2Int> sameBubbleList = new();
     HashSet<Vector2Int> alreadyCheck = new();
     // 같은 타입일때 리스트에 더하자.
-    private void AddSameBubble(Bubble.Type type, Vector2Int coord2D, int x, int y)
+    private void AddSameBubble(Bubble.Type type, Vector2Int coord2D
+        , int x, int y)
     {
         var checkPos = new Vector2Int(x, y) + coord2D;
         if (alreadyCheck.Contains(checkPos))
