@@ -27,10 +27,13 @@ public class BubbleSpawner : MonoBehaviour
     {
         var newMovingBubble = Instantiate(movingBubbleBase);
         newMovingBubble.transform.position = position;
-        var selectBubble = bubbles.OrderBy(x => UnityEngine.Random.Range(0, 1f)).FirstOrDefault();
+        var selectBubble = bubbles
+            .OrderBy(x => UnityEngine.Random.Range(0, 1f))
+            .FirstOrDefault();
         var colorGo = Instantiate(selectBubble);
         colorGo.transform.parent = newMovingBubble.transform;
         colorGo.transform.localPosition = Vector3.zero;
+        newMovingBubble.GetComponent<Collider2D>().enabled = false;
         return newMovingBubble;
     }
 
@@ -52,11 +55,15 @@ public class BubbleSpawner : MonoBehaviour
                 Mathf.Sin(Mathf.Deg2Rad * angle),  // x 좌표
                 Mathf.Cos(Mathf.Deg2Rad * angle)); // y 좌표 구하기
 
+            movingBubble.GetComponent<Collider2D>().enabled = true;
             movingBubble.Fire(direction, force);
 
             // 다음버블이 현배 버블위치로 이동
+            movingBubble = nextMovingBubble;
+            movingBubble.transform.position = fireDirTr.position;
 
             // 다음 버블 생성
+            nextMovingBubble = GetNextBubble(nextBubbleTr.position);
         }
     }
 }
