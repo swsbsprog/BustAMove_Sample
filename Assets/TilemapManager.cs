@@ -38,10 +38,15 @@ public class TilemapManager : MonoBehaviour
         CheckNearSameBubble(bubble.type, bubble.coord2D);
         if(sameBubbleList.Count >= 3)
         {
-
+            foreach (var coord in sameBubbleList)
+            {
+                Destroy(coordMap[coord].gameObject);
+                coordMap.Remove(coord);
+            }
         }
 
         sameBubbleList.Clear();
+        alreadyCheck.Clear();
     }
 
     private void CheckNearSameBubble(Bubble.Type type, Vector2Int coord2D)
