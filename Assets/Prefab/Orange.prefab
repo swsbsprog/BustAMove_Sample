@@ -119,6 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134da2c480e98b346a9ae8e74c852897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 5
+  col: {fileID: 0}
+  textMesh: {fileID: 0}
 --- !u!58 &1562133872104087105
 CircleCollider2D:
   m_ObjectHideFlags: 0

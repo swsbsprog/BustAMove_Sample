@@ -21,6 +21,7 @@ public class MovingBubble : MonoBehaviour
         if (bubble == null)
             return;
         TilemapManager.instance.AddBubble(bubble);
+        TilemapManager.instance.DestroyMatch3(bubble);
 
         //움직이는버블 부스고,
         Destroy(gameObject);

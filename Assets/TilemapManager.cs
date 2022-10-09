@@ -31,4 +31,12 @@ public class TilemapManager : MonoBehaviour
         coordMap[coord2D] = bubble;
         bubble.SetCoord(coord2D);
     }
+
+    internal void DestroyMatch3(Bubble bubble)
+    {
+        //bubble.coord2D
+        //bubble.type
+        //bubble타입정보, 위치 사용해서 3개이상 연결된 블럭들을 파괴하자.
+
+    }
 }
