@@ -17,8 +17,11 @@ public class BubbleSpawner : MonoBehaviour
     public MovingBubble movingBubble;
     public MovingBubble nextMovingBubble;
 
+    public int randomSeed;
     private void Start()
     {
+        if(randomSeed != 0)
+            UnityEngine.Random.InitState(randomSeed);
         movingBubble = GetNextBubble(fireDirTr.position);
         nextMovingBubble = GetNextBubble(nextBubbleTr.position);
     }
